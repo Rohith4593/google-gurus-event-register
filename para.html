@@ -1,195 +1,243 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KIT - Paramedical Events</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About – Google Gurus Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --card-bg: #1e1e1e;
+      --border-radius: 10px;
+      --google-blue: #4285F4;
+      --google-red: #EA4335;
+      --google-yellow: #FBBC05;
+      --google-green: #34A853;
+      --soft-blue: #3399ff;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000;
-      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.8;
     }
 
-    header.kit-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(90deg, #000000, #001f33);
-      padding: 20px 40px;
-      border-bottom: 2px solid #00BFFF;
-    }
-
-    .kit-brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
-    }
-
-    .kit-main {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: white;
-      letter-spacing: 2px;
-    }
-
-    .kit-sub {
-      font-size: 1.2rem;
-      color: #00BFFF;
-      font-weight: 500;
-    }
-
-    .kit-tagline {
-      font-size: 1.6rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-    }
-
-    .google-color {
-      font-weight: bold;
-      font-family: Arial, sans-serif;
-    }
-
-    .google-color:nth-child(1) { color: #4285F4; } /* G */
-    .google-color.red { color: #EA4335; }         /* o */
-    .google-color.yellow { color: #FBBC05; }      /* o */
-    .google-color.blue { color: #4285F4; }        /* g */
-    .google-color.green { color: #34A853; }       /* l */
-    .google-color.red:last-child { color: #EA4335; } /* e */
-
-    .guru-stylish {
-      font-family: 'Pacifico', cursive;
-      color: #00BFFF;
-      margin-left: 10px;
-    }
-
-    main {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #00BFFF;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .event-details {
-      background-color: #111;
+    header {
+      background-color: #1f1f1f;
       padding: 20px;
-      border-left: 4px solid #00BFFF;
+      text-align: center;
+      border-bottom: 2px solid var(--google-blue);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    header h1 span:nth-child(1) { color: var(--google-blue); }
+    header h1 span:nth-child(2) { color: var(--google-red); }
+    header h1 span:nth-child(3) { color: var(--google-yellow); }
+    header h1 span:nth-child(4) { color: var(--google-blue); }
+    header h1 span:nth-child(5) { color: var(--google-green); }
+    header h1 span:nth-child(6) { color: var(--google-red); }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .gradient-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #3399ff, #00ccff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    section {
       margin-bottom: 40px;
-      border-radius: 8px;
+      padding: 25px;
+      background-color: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 0 12px rgba(0,0,0,0.6);
     }
 
-    .event-details h3 {
-      color: #fff;
-      margin-bottom: 10px;
+    .member {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px dashed #555;
     }
 
-    .event-details p {
+    .member strong {
+      font-size: 1.1rem;
+      color: var(--soft-blue);
+    }
+
+    .member span {
+      display: block;
+      margin-top: 5px;
       color: #ccc;
-      margin: 5px 0;
     }
 
-    .form-section {
+    .contact {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 30px;
+      color: var(--google-green);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1f1f1f;
       margin-top: 40px;
-    }
-
-    iframe {
-      border: 2px solid #00BFFF;
-      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #aaa;
     }
 
     .back-home {
-      display: block;
       text-align: center;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     .back-home a {
-      color: #00BFFF;
-      text-decoration: none;
-      font-weight: bold;
+      color: #fff;
+      background-color: var(--google-blue);
       padding: 10px 20px;
-      border: 2px solid #00BFFF;
+      text-decoration: none;
       border-radius: 5px;
-      transition: background 0.3s;
+      font-weight: bold;
+      display: inline-block;
     }
 
     .back-home a:hover {
-      background-color: #00BFFF;
-      color: #000;
+      background-color: #3367d6;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #111;
-      border-top: 2px solid #00BFFF;
-      color: #999;
-      margin-top: 60px;
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .gradient-title {
+        font-size: 1.5rem;
+      }
+
+      .container {
+        padding: 20px 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="kit-header">
-    <div class="kit-brand">
-      <div class="kit-main">KIT</div>
-      <div class="kit-sub">Kangeyam Institute of Technology</div>
-    </div>
-    <div class="kit-tagline">
-      <span class="google-color">G</span>
-      <span class="google-color red">o</span>
-      <span class="google-color yellow">o</span>
-      <span class="google-color blue">g</span>
-      <span class="google-color green">l</span>
-      <span class="google-color red">e</span>
-      <span class="guru-stylish">Gurus</span>
-    </div>
+  <header>
+    <h1>
+      <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span> <span class="gradient-title">Gurus Club</span>
+    </h1>
   </header>
 
-  <main>
-    <h2>Paramedical Events</h2>
+  <div class="container">
 
-    <div class="event-details">
-      <h3>Medical Coding</h3>
-      <p>Put your healthcare knowledge to the test in a competitive challenge where accuracy and speed in coding are key.</p>
-    </div>
-
-    <div class="event-details">
-      <h3>Paper Presentation</h3>
-      <p>Present your ideas and innovations in the medical domain through a professional research paper presentation.</p>
-    </div>
-
-    <section class="form-section">
-      <h2>Register Now</h2>
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLScqEhMmbEqK5nTLrZqhTQk0yj7TKZWHz5xPJQODVlSS4XNBDg/viewform?embedded=true" 
-        width="100%" 
-        height="900" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0">
-        Loading…
-      </iframe>
+    <section>
+      <h2 class="gradient-title">About the Event</h2>
+      <p>
+        <strong>Google Gurus – Two Day Tech Fiesta</strong> is a student-powered initiative organized by the students of 
+        <strong>Kangeyam Institute of Technology (KIT)</strong>. The event fosters creativity, encourages technical excellence, 
+        and empowers students with Google technologies. This event features workshops, competitions, and showcases innovative ideas 
+        in a collaborative learning environment.
+      </p>
     </section>
+
+    <section>
+      <h2 class="gradient-title">Staff Coordinator</h2>
+      <div class="member">
+        <strong>Ms. Sandhya</strong><br>
+        <span>Department: CSE</span>
+        <span>Role: Club Coordinator and mentor for all operations and planning.</span>
+        <span>Email: <em>Not updated</em></span>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="gradient-title">Student Organizing Committee</h2>
+
+      <div class="member">
+        <strong>Dharani</strong><br>
+        <span>4th Year – CSE</span>
+        <span>Role: President – Leading the team with strategic planning and decisions.</span>
+        <span>Email: <em>Not updated</em></span>
+      </div>
+
+      <div class="member">
+        <strong>Rohith S.V</strong><br>
+        <span>3rd Year – AI & DS</span>
+        <span>Role: Vice President – Supports and coordinates execution across events.</span>
+        <span>Email: <em>Not updated</em></span>
+      </div>
+
+      <div class="member">
+        <strong>Harni</strong><br>
+        <span>4th Year – CSE</span>
+        <span>Role: Treasurer – Manages event finances and budget allocation.</span>
+        <span>Email: <em>Not updated</em></span>
+      </div>
+
+      <div class="member">
+        <strong>Chandru</strong><br>
+        <span>3rd Year – ECE</span>
+        <span>Role: Vice Treasurer – Assists with transactions and resource tracking.</span>
+        <span>Email: <em>Not updated</em></span>
+      </div>
+
+      <div class="member">
+        <strong>Jeevitha</strong><br>
+        <span>4th Year – EEE</span>
+        <span>Role: Secretary – Maintains communication and documentation.</span>
+        <span>Email: <em>Not updated</em></span>
+      </div>
+
+      <div class="member">
+        <strong>Vikas</strong><br>
+        <span>3rd Year – ECE</span>
+        <span>Role: Vice Secretary – Supports scheduling and correspondence duties.</span>
+        <span>Email: <em>Not updated</em></span>
+      </div>
+
+      <div class="member">
+        <strong>Varun Prasath</strong><br>
+        <span>2nd Year – AI & ML</span>
+        <span>Role: Event Manager – Organizes event planning and logistics.</span>
+        <span>Email: <em>Not updated</em></span>
+      </div>
+
+      <div class="member">
+        <strong>Deepikasri</strong><br>
+        <span>2nd Year – ECE</span>
+        <span>Role: Event Manager – Manages sessions, volunteers, and event timeline.</span>
+        <span>Email: <em>Not updated</em></span>
+      </div>
+    </section>
+
+    <div class="contact">
+      📞 Contact Numbers: <em>Not updated</em> | <em>Not updated</em>
+    </div>
 
     <div class="back-home">
       <a href="index.html">← Back to Home</a>
     </div>
-  </main>
+  </div>
 
-  <footer>
-    &copy; 2025 KIT - Kangeyam Institute of Technology. All rights reserved.
+  <footer class="footer">
+    &copy; 2025 Google Gurus – KIT. All rights reserved.
   </footer>
 </body>
 </html>
-
