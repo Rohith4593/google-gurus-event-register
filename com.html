@@ -138,6 +138,7 @@
       background-color: #00BFFF;
       color: #000;
     }
+
     .back-home a {
       color: #00BFFF;
       text-decoration: none;
@@ -153,12 +154,41 @@
       background-color: #00BFFF;
       color: #000;
     }
+
+    /* ✅ Responsive Fix for Header on Small Screens */
+    @media (max-width: 600px) {
+      header.kit-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+      }
+
+      .tcs-style-logo {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .google-logo.top-right {
+        position: static;
+        margin-top: 10px;
+        align-self: flex-end;
+      }
+
+      .kit-brand-text .title {
+        font-size: 1.6rem;
+      }
+
+      .kit-brand-text .subtitle {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="kit-header">
     <div class="tcs-style-logo">
-      <img src="logo.png" alt="KIT Logo" />
+      <img src="image/logo.png" alt="KIT Logo" />
       <div class="kit-brand-text">
         <span class="title">KIT</span>
         <span class="subtitle">Kangeyam Institute of Technology</span>
